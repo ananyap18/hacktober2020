@@ -1,41 +1,32 @@
-#include <bits/stdc++.h> 
-using namespace std; 
-  
-void swap(int *xp, int *yp)  
-{  
-    int temp = *xp;  
-    *xp = *yp;  
-    *yp = temp;  
-}  
-  
-// A function to implement bubble sort  
-void bubbleSort(int arr[], int n)  
-{  
-    int i, j;  
-    for (i = 0; i < n-1; i++)      
-      
-    // Last i elements are already in place  
-    for (j = 0; j < n-i-1; j++)  
-        if (arr[j] > arr[j+1])  
-            swap(&arr[j], &arr[j+1]);  
-}  
-  
-/* Function to print an array */
-void printArray(int arr[], int size)  
-{  
-    int i;  
-    for (i = 0; i < size; i++)  
-        cout << arr[i] << " ";  
-    cout << endl;  
-}  
-  
-// Driver code  
-int main()  
-{  
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};  
-    int n = sizeof(arr)/sizeof(arr[0]);  
-    bubbleSort(arr, n);  
-    cout<<"Sorted array: \n";  
-    printArray(arr, n);  
-    return 0;  
+#include<iostream.h>
+#include<conio.h>
+void bubblesort(int arr[],int size)
+{	int temp;
+	for(int i=0;i<size;i++)
+	{	for(int j=0;j<size-1;j++)
+		{	if(arr[j]>arr[j+1])
+			{	temp=arr[j];
+				arr[j]=arr[j+1];
+				arr[j+1]=temp;
+			}
+		}
+	}
 }
+void main()
+{	clrscr();
+	int a[50],s;
+	cout<<"\n\t\tEnter size of the array:";
+	cin>>s;
+	cout<<"\n\t\tEnter the records into the array:\n\t\t";
+	for(int i=0;i<s;i++)
+	       {	cin>>a[i];
+			cout<<"\n\t\t";
+	       }
+	cout<<"\n\t\tSorted array is as follows:\n";
+	bubblesort(a,s);
+	for(int n=0;n<s;n++)
+	       {	cout<<a[n]<<"\n\t\t";
+	       }
+
+}
+
